@@ -7,7 +7,6 @@ class PatientDoctorMapping(models.Model):
     class Meta:
         unique_together = ('patient', 'doctor') 
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 
